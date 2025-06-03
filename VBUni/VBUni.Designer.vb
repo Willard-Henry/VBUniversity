@@ -22,6 +22,7 @@ Partial Class VBUni
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VBUni))
         Label1 = New Label()
         Label2 = New Label()
         NameTextBox = New TextBox()
@@ -32,6 +33,8 @@ Partial Class VBUni
         ResetButton = New Button()
         PrintButton = New Button()
         ExitButton = New Button()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
         SuspendLayout()
         ' 
         ' Label1
@@ -124,9 +127,23 @@ Partial Class VBUni
         ExitButton.Text = "E&xit"
         ExitButton.UseVisualStyleBackColor = True
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
         ' VBUni
         ' 
-        AutoScaleDimensions = New SizeF(9F, 18F)
+        AutoScaleDimensions = New SizeF(9.0F, 18.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(548, 405)
         Controls.Add(Display3Button)
@@ -139,7 +156,7 @@ Partial Class VBUni
         Controls.Add(NameTextBox)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Font = New Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Georgia", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Name = "VBUni"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Student Information"
@@ -157,5 +174,7 @@ Partial Class VBUni
     Friend WithEvents ResetButton As Button
     Friend WithEvents PrintButton As Button
     Friend WithEvents ExitButton As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 
 End Class
